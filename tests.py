@@ -20,11 +20,8 @@ def main():
     #print(write_file("calculator", "/tmp/temp.txt", "this should not be allowed"))
 
     print(run_python_file("calculator", "main.py"))
-    #print("______")
     print(run_python_file("calculator", "tests.py"))
-    #print("______")
     print(run_python_file("calculator", "../main.py"))
-    #print("______")
     print(run_python_file("calculator", "nonexistent.py"))
 
     
