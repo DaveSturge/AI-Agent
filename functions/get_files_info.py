@@ -18,7 +18,11 @@ schema_get_files_info = types.FunctionDeclaration(
 def get_files_info(working_directory, directory = None):
     abs_working_dir = os.path.abspath(working_directory)
 
-    joined = os.path.join(working_directory, directory)
+    if directory is None:
+        joined = working_directory
+    else:
+        joined = os.path.join(working_directory, directory)
+        
     abs_dir = os.path.abspath(joined)
     
     if not abs_dir.startswith(f"{abs_working_dir}/") and not abs_dir == abs_working_dir:
@@ -43,4 +47,3 @@ def get_files_info(working_directory, directory = None):
     joined_string = '\n'.join(output_list)
 
     return joined_string
-
